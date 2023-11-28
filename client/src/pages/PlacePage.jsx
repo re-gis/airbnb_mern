@@ -13,9 +13,11 @@ const PlacePage = () => {
     if (!id) {
       return;
     }
-    axios.get(`/places/${id}`).then((response) => {
-      setPlace(response.data);
-    });
+    axios
+      .get(`https://airbnb-9av7.onrender.com/places/${id}`)
+      .then((response) => {
+        setPlace(response.data);
+      });
   }, [id]);
 
   if (!place) return "";

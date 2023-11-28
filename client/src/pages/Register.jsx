@@ -11,7 +11,7 @@ const Register = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/register", {
+      await axios.post("https://airbnb-9av7.onrender.com/register", {
         name,
         email,
         password,

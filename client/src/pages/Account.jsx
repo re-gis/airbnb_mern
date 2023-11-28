@@ -15,7 +15,7 @@ const Account = () => {
   }
 
   const logout = async () => {
-    await axios.post("/logout");
+    await axios.post("https://airbnb-9av7.onrender.com/logout");
     setUser(null);
     setRedirect("/");
   };

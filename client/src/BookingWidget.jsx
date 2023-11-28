@@ -31,7 +31,10 @@ const BookingWidget = ({ place }) => {
       place: place._id,
       price: numberOfDays * place.price,
     };
-    const response = await axios.post("/bookings", data);
+    const response = await axios.post(
+      "https://airbnb-9av7.onrender.com/bookings",
+      data
+    );
 
     const bookingId = response.data._id;
     setRedirect(`/account/bookings/${bookingId}`);

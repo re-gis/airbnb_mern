@@ -7,10 +7,11 @@ import AccountNav from "./AccountNav";
 const PlacesPage = () => {
   const [places, setPlaces] = useState([])
   useEffect(() => {
-    axios.get('/user-places')
-    .then(({data}) => {
-      setPlaces(data)
-    })
+    axios
+      .get("https://airbnb-9av7.onrender.com/user-places")
+      .then(({ data }) => {
+        setPlaces(data);
+      });
   }, [])
   return (
     <div>

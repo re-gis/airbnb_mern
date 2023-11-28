@@ -6,9 +6,12 @@ const PhotosUploader = ({ addedPhotos, onChange }) => {
   // Function to add photos
   const addPhotoByLink = async (e) => {
     e.preventDefault();
-    const { data: filename } = await axios.post("/upload-by-link", {
-      link: photoLink,
-    });
+    const { data: filename } = await axios.post(
+      "https://airbnb-9av7.onrender.com/upload-by-link",
+      {
+        link: photoLink,
+      }
+    );
     onChange((prev) => {
       return [...prev, filename];
     });
@@ -22,7 +25,7 @@ const PhotosUploader = ({ addedPhotos, onChange }) => {
       data.append("photos", files[i]);
     }
     axios
-      .post("/upload", data, {
+      .post("https://airbnb-9av7.onrender.com/upload", data, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((response) => {

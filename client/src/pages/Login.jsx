@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "/login",
+        "https://airbnb-9av7.onrender.com/login",
         {
           email,
           password,

@@ -10,9 +10,9 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
-      axios.get("/profile").then(({ data }) => {
+      axios.get("https://airbnb-9av7.onrender.com/profile").then(({ data }) => {
         setUser(data);
-        setReady(true)
+        setReady(true);
       });
     }
   }, []);

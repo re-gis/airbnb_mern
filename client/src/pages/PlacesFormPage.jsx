@@ -36,7 +36,7 @@ const PlacesFormPage = () => {
 
     if (id) {
       // This is updating a place
-      await axios.put("/places", {
+      await axios.put("https://airbnb-9av7.onrender.com/places", {
         id,
         ...placeData,
       });
@@ -44,7 +44,7 @@ const PlacesFormPage = () => {
     } else {
       // This is saving new place
 
-      await axios.post("/places", {
+      await axios.post("https://airbnb-9av7.onrender.com/places", {
         ...placeData,
       });
       setRedirect(true);
@@ -55,19 +55,21 @@ const PlacesFormPage = () => {
     if (!id) {
       return;
     } else {
-      axios.get("/places/" + id).then((response) => {
-        const { data } = response;
-        setTitle(data.title);
-        setAdress(data.address);
-        setAddedPhotos(data.photos);
-        setDescription(data.description);
-        setPerks(data.perks);
-        setExtraInfo(data.extraInfo);
-        setCheckIn(data.checkIn);
-        setCheckOut(data.checkOut);
-        setMaxGuests(data.maxGuests);
-        setPrice(data.price)
-      });
+      axios
+        .get("https://airbnb-9av7.onrender.com/places/" + id)
+        .then((response) => {
+          const { data } = response;
+          setTitle(data.title);
+          setAdress(data.address);
+          setAddedPhotos(data.photos);
+          setDescription(data.description);
+          setPerks(data.perks);
+          setExtraInfo(data.extraInfo);
+          setCheckIn(data.checkIn);
+          setCheckOut(data.checkOut);
+          setMaxGuests(data.maxGuests);
+          setPrice(data.price);
+        });
     }
   }, [id]);
 

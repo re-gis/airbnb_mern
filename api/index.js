@@ -40,7 +40,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: "http://127.0.0.1:5174",
+    origin: "https://airbnb-mern-opal.vercel.app",
   })
 );
 

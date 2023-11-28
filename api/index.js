@@ -45,14 +45,10 @@ app.use(
 );
 
 // Connect to MongoDB
-mongoose.connect(
-  process.env.MONGO_URI,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  console.log("Database connected...")
-);
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("Database connected!"))
+  .catch((e) => console.log(e));
 
 app.use(express.json());
 
